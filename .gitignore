@@ -1,0 +1,17 @@
+# eclipse 
+.classpath
+.settings/
+.project
+
+# maven project
+target/
+
+# mac
+.DS_Store
+
+# idea
+*.iml
+.idea/
+
+# vim 
+*.swp
