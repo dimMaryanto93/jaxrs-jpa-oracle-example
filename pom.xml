@@ -12,6 +12,16 @@
 
 	<repositories>
 		<repository>
+			<id>oss.sonatype.org</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</repository>
+		<repository>
+			<id>EclipseLink Repo</id>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+			<name>EclipseLink Repo</name>
+		</repository>
+		<repository>
 			<id>snapshot-repository.java.net</id>
 			<name>Java.net Snapshot Repository for Maven</name>
 			<url>https://maven.java.net/content/repositories/snapshots/</url>
