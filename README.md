@@ -42,3 +42,20 @@ docker container ls
 cd dev/example/docker-images/oracle-docker-images/OracleDatabase/dockerfiles/11.2.0.2/ && docker exec oracle-suzuki ./setPassword.sh oracle
 ```
 
+## Installtain Payara server
+
+Pull payara from `docker pull payara/server-full`
+
+### Run server payara/server-full
+
+```bash
+docker run -p 4848:4848 -p 8081:8080 --name payara-suzuki -v $(pwd):/opt/payara41/deployments -d payara/server-full
+```
+
+### check configuration
+
+```bash
+docker container ls
+```
+
+![docker](docs/images/payara-docker-ls.png)
