@@ -34,7 +34,7 @@ public class NasabahController {
 	@Path("/list")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Nasabah> findAll() {
-		Query query = entityManager.createNamedQuery("from * from Nasabah");
+		Query query =  entityManager.createQuery("select n from Nasabah as n");
 		return query.getResultList();
 	}
 
