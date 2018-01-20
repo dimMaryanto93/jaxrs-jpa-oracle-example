@@ -43,7 +43,7 @@ docker-compose up -d
 Setelah `oracledb` startup is done... setup your system/dba/sys password using command
 
 ```bash 
-docker exec -ti <container-id-oracledb> bash /opt/alter-user-oracle.sh
+docker exec <container-id-oracledb> bash /opt/alter-user-oracle.sh
 ```
 
 Cleanup...
