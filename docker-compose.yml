@@ -4,7 +4,7 @@ services:
   oracledb:
     image: oracle/database:11.2.0.2-xe
     volumes: 
-      - ./docker-entrypoint.sh:/opt/alter-user-oracle.sh
+      - ./docker-entrypoint.sh:/opt/unlock-hr.sh
     ports:
       - "1521:1521"
       - "8081:8080"
@@ -17,7 +17,7 @@ services:
       - "8080:8080"
       - "4848:4848"
     volumes: 
-      - .:/opt/payara41/deployments
+      - ./target/jaxrs-example.war:/opt/payara41/deployments/jaxrs-example.war
       - ${HOME}/.m2/repository/com/oracle/ojdbc6/11.2.0.3/:/opt/payara41/glassfish/domains/domain1/lib/ext
     depends_on: 
       - oracledb

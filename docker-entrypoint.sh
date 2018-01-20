@@ -5,9 +5,8 @@ until
         ALTER USER SYSTEM IDENTIFIED BY admin;
         ALTER USER HR IDENTIFIED BY hr ACCOUNT UNLOCK;
         exit;
-      EOF"; do 
+      EOF"; 
+do 
       >&2 echo "Oracle database sleeping..."
       sleep 1
 done
-
-echo "User granted and altered!"
