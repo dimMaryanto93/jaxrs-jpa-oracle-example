@@ -16,13 +16,11 @@ import com.maryanto.dimas.example.entity.Nasabah;
 @Path("/nasabah")
 public class NasabahController {
 
-	// @PersistenceContext(unitName = "persistenceUnit", type =
-	// PersistenceContextType.TRANSACTION)
 	EntityManager entityManager;
 
 	public NasabahController() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistenceUnit");
-		this.entityManager = factory.createEntityManager();
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistenceUnit");
+		this.entityManager = emf.createEntityManager();
 	}
 
 	@GET

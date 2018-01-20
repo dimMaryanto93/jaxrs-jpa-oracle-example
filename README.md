@@ -49,7 +49,7 @@ Pull payara from `docker pull payara/server-full`
 ### Run server payara/server-full
 
 ```bash
-docker run -p 4848:4848 -p 8081:8080 --name payara-suzuki -v $(pwd):/opt/payara41/deployments -d payara/server-full
+docker run -p 4848:4848 -p 8081:8080 --name payara-suzuki -v $(pwd):/opt/payara41/deployments -v /Users/dimmaryanto93/.m2/repository/com/oracle/ojdbc6/11.2.0.3/:/opt/payara41/glassfish/domains/domain1/lib/ext  -d payara/server-full
 ```
 
 ### check configuration
