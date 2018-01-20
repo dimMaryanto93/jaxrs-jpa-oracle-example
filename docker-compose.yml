@@ -3,12 +3,16 @@ version: "3"
 services:
   oracledb:
     image: oracle/database:11.2.0.2-xe
+    volumes: 
+      - ./docker-entrypoint.sh:/opt/alter-user-oracle.sh
     ports:
       - "1521:1521"
       - "8081:8080"
     shm_size: '1g'
     environment:
       - ORACLE_PWD=admin
+    command: 
+     - /opt/alter-user-oracle.sh
   webserver:
     image: payara/server-full
     ports: 
