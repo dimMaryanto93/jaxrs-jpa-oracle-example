@@ -46,6 +46,16 @@ Setelah `oracledb` startup is done... setup your system/dba/sys password using c
 docker exec <docker-container-name> ./setPassword.sh <your-password>
 ```
 
+Grant HR user with docker exec
+
+```bash
+docker exec -ti jaxrsjpaoracleexample_oracledb_1 sqlplus system@XE
+```
+
+```sql
+ALTER USER HR IDENTIFIED BY HR ACCOUNT UNLOCK;
+```
+
 Cleanup...
 
 ```bash
