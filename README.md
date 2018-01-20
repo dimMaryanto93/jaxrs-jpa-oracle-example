@@ -40,6 +40,12 @@ Startup...
 docker-compose up -d
 ```
 
+Setelah `oracledb` startup is done... setup your system/dba/sys password using command
+
+```bash
+docker exec <docker-container-name> ./setPassword.sh <your-password>
+```
+
 Cleanup...
 
 ```bash
