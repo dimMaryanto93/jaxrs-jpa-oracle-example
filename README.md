@@ -22,7 +22,7 @@ docker image ls
 
 ![image location](docs/images/docker-image-ls.png)
 
-## Installtain Payara server
+## Installation Payara server
 
 Pull payara from `docker pull payara/server-full`
 
