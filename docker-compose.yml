@@ -11,8 +11,6 @@ services:
     shm_size: '1g'
     environment:
       - ORACLE_PWD=admin
-    command: 
-     - /opt/alter-user-oracle.sh
   webserver:
     image: payara/server-full
     ports: 
