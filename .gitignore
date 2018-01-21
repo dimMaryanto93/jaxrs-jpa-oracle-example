@@ -9,6 +9,9 @@ target/
 # mac
 .DS_Store
 
+# netbeans
+nb-configuration.xml
+
 # idea
 *.iml
 .idea/

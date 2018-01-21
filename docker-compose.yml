@@ -8,7 +8,7 @@ services:
     ports:
       - "1521:1521"
       - "8081:8080"
-    shm_size: '1g'
+    shm_size: '2gb'
     environment:
       - ORACLE_PWD=admin
   webserver:
