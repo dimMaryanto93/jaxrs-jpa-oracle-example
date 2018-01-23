@@ -62,10 +62,9 @@ public class NasabahController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Nasabah save(Nasabah nasabah) {
-
-        entityManager.getTransaction().begin();
-        entityManager.persist(nasabah);
-        entityManager.getTransaction().commit();
+        this.entityManager.getTransaction().begin();
+        this.entityManager.persist(nasabah);
+        this.entityManager.getTransaction().commit();
         return nasabah;
     }
 
