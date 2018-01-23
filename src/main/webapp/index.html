@@ -1,16 +1,84 @@
 <html>
-	<head>
-		<script type="text/javascript" src="static/datatables/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="static/datatables/datatables.min.js"></script>
-		<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="static/datatables/DataTables-1.10.16/css/jquery.dataTables.min.css">
-		<link rel="stylesheet" href="static/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
-	</head>
-    <body class="container">
-        <h2>Hello World!</h2>
-        
-        <script type="text/javascript">
-        		$('h2').text("Halo dunia");
-        </script>
-    </body>
+<head>
+<script type="text/javascript"
+	src="static/datatables/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="static/datatables/datatables.min.js"></script>
+<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="static/datatables/DataTables-1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="static/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+</head>
+<body class="container">
+	<h2>Hello World!</h2>
+
+	<script type="text/javascript">
+		$('h2').text("Halo dunia");
+
+		$(document).ready(function() {
+			console.log("Jquery works");
+			$('#listenerClick').click(function() {
+				alert("Button click!");
+			});
+
+			$('#getNasabah').click(function() {
+				$.get("/jaxrs-example/api/nasabah/list", function(data) {
+					console.log(data);
+				}).done(function() {
+					console.log("second success");
+				}).fail(function() {
+					console.log("error");
+				}).always(function() {
+					console.log("finished");
+				});
+			});
+
+			$('#postNasabah').click(function() {
+				/* $.post("/jaxrs-example/api/nasabah/save", {
+					cif : "deni1",
+					namaLengkap : "Deni Sutisna"
+				}).done(function(data) {
+					alert("Data Loaded: " + data);
+				}); */
+
+				$.ajax({
+					contentType: "application/json",
+					type : "POST",
+					url : "/jaxrs-example/api/nasabah/save",
+					data : {
+						cif : "deni1",
+						namaLengkap : "Deni Sutisna"
+					},
+					success : function(data){
+						console.log(data);
+					},
+					dataType : "json"
+				});
+			})
+
+		});
+
+		/* button handler click */
+		function clickMe() {
+			console.log("Button di click!");
+		}
+	</script>
+
+	<div>
+		<button id="listenerClick" onclick="clickMe()">Click with
+			listener</button>
+	</div>
+	<div>
+		<button id="buttonClick" onclick="clickMe()">Clik with
+			onclick function</button>
+	</div>
+	<div>
+		<button id="getNasabah" class="btn btn-default">Fetch data
+			nasabah</button>
+	</div>
+	<div>
+		<button id="postNasabah" class="btn btn-primary">Posting data
+			nasabah</button>
+	</div>
+</body>
 </html>
