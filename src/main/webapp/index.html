@@ -35,20 +35,17 @@
 
 			$('#postNasabah').click(function() {
 				$.ajax({
-					headers : {
-						'Accept' : 'application/json',
-						'Content-Type' : 'application/json'
-					},
 					type : "POST",
+					contentType:"application/json; charset=utf-8",
 					url : "/jaxrs-example/api/nasabah/save",
 					data : JSON.stringify({
-						cif : "deni1",
-						namaLengkap : "Deni Sutisna"
+						"cif" : "sapto1",
+						"namaLengkap" : "Hari Sapto Adi"
 					}),
-					success : function(data) {
-						console.log("data berhasil dikirim")
+					success : function() {
+						console.log("Data berhasil dikirim ke server!");
 					},
-					dataType : 'json'
+					dataType : "json"
 				});
 			});
 
