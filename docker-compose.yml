@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  oracledb:
+    image: oracle/database:11.2.0.2-xe
+    volumes: 
+      - ./docker-entrypoint.sh:/unlock-hr.sh
+    ports:
+      - "1521:1521"
+      - "8081:8080"
+    shm_size: '2gb'
+    environment:
+      - ORACLE_PWD=admin
+  webserver:
+    image: payara/server-full
+    ports: 
+      - "8080:8080"
+      - "4848:4848"
+    volumes: 
+      - ./target/jaxrs-example/:/opt/payara41/deployments/site
+      - ${HOME}/.m2/repository/com/oracle/ojdbc6/11.2.0.3/:/opt/payara41/glassfish/domains/domain1/lib/ext
+    depends_on: 
+      - oracledb

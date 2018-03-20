@@ -9,9 +9,26 @@ import javax.persistence.Table;
 @Table(name = "MASTER_NASABAH")
 public class Nasabah {
 
-	@Id
-	@Column(name = "customer_information", nullable = false, unique = true)
-	private String cif;
-	@Column(name = "nama_lengkap", nullable = false, length = 50)
-	private String namaLengkap;
+    @Id
+    @Column(name = "customer_information", nullable = false, unique = true)
+    private String cif;
+    @Column(name = "nama_lengkap", nullable = false, length = 50)
+    private String namaLengkap;
+
+    public String getCif() {
+        return cif;
+    }
+
+    public void setCif(String cif) {
+        this.cif = cif;
+    }
+
+    public String getNamaLengkap() {
+        return namaLengkap;
+    }
+
+    public void setNamaLengkap(String namaLengkap) {
+        this.namaLengkap = namaLengkap;
+    }
+
 }
